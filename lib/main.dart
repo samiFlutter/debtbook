@@ -1,8 +1,18 @@
-import 'package:debtbook/screens/lendPage.dart';
+import 'package:debtbook/providers/LendBorrowVar.dart';
+import 'package:debtbook/providers/provider_test.dart';
+import 'package:debtbook/screens/mainPage.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainClass());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LendVarState()),
+      ],
+      child: const MainClass(),
+    ),
+  );
 }
 
 class MainClass extends StatefulWidget {
@@ -16,6 +26,7 @@ class _MainClassState extends State<MainClass> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //home: MainPage(),
       home: MainPage(),
       debugShowCheckedModeBanner: false,
     );

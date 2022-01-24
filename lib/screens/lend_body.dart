@@ -25,8 +25,12 @@ class LendContainer extends StatelessWidget {
                     )
                   ],
                 )),
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: const Divider(
+                color: Colors.black,
+                thickness: 2,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,6 +73,13 @@ class LendContainer extends StatelessWidget {
                   child: Text('0.00\$'),
                 ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Divider(
+                color: Colors.black,
+                thickness: 2,
+              ),
             ),
             Container(
               color: Colors.white,

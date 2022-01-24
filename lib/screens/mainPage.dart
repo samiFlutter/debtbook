@@ -1,7 +1,7 @@
 import 'dart:ffi';
-
-import 'package:debtbook/screens/borrow_card.dart';
-import 'package:debtbook/screens/lend_card.dart';
+import 'package:debtbook/screens/borrow_body.dart';
+import 'package:debtbook/screens/bottomsheet_lendpage.dart';
+import 'package:debtbook/screens/lend_body.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -41,15 +41,13 @@ class _MainPageState extends State<MainPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              RaisedButton(
-                  color: Colors.deepOrange,
-                  padding: EdgeInsets.fromLTRB(
-                      0, 0, MediaQuery.of(context).size.height * 0.2, 0),
-                  child: Center(
-                    child: Text(
-                      'lend',
-                      textAlign: TextAlign.center,
-                    ),
+              TextButton(
+                  //color: Colors.deepOrange,
+                  /* padding: EdgeInsets.fromLTRB(
+                      0, 0, MediaQuery.of(context).size.height * 0.2, 0),*/
+                  child: Text(
+                    'lend',
+                    textAlign: TextAlign.center,
                   ),
                   onPressed: () {
                     lendvar = true;
@@ -59,11 +57,8 @@ class _MainPageState extends State<MainPage> {
                   color: Colors.deepOrange,
                   padding: EdgeInsets.fromLTRB(
                       0, 0, MediaQuery.of(context).size.height * 0.2, 0),
-                  child: Center(
-                    child: Text(
-                      'borrow',
-                      textAlign: TextAlign.center,
-                    ),
+                  child: Text(
+                    'borrow',
                   ),
                   onPressed: () {
                     lendvar = false;
@@ -76,25 +71,9 @@ class _MainPageState extends State<MainPage> {
           )
         ],
       ),
-      // bottomSheet: Column(
-      //   mainAxisAlignment: MainAxisAlignment.end,
-      //   children: [
-      //     Row(
-      //       mainAxisAlignment: MainAxisAlignment.end,
-      //       children: [
-      //         FloatingActionButton(
-      //           backgroundColor: Colors.deepOrange,
-      //           onPressed: () {},
-      //           tooltip: '',
-      //           child: const Icon(Icons.add),
-      //         ),
-      //       ],
-      //     ),
-      //     SizedBox(
-      //       height: 10,
-      //     )
-      //   ],
-      // ),
+      bottomSheet: const Bottomsheetlandpage(
+        key: null,
+      ),
     );
   }
 }
