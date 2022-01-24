@@ -1,4 +1,4 @@
-import 'package:debtbook/screens/mainPage.dart';
+import 'package:debtbook/screens/lendPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
