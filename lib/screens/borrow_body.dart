@@ -7,35 +7,39 @@ import 'package:provider/src/provider.dart';
 import 'package:debtbook/customWidget/three_buttons.dart';
 import 'package:debtbook/customWidget/overview_and_text.dart';
 
-class BorrowContainer extends StatelessWidget {
+class BorrowContainer extends StatefulWidget {
   const BorrowContainer({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      //to make a backgound color
-      color: Colors.white,
-      child: Column(
-        children: [
-          OverviewAndText(),
-          Container(
-            ///////divider//////////////////////////////
-            color: context.watch<LendVarState>().back_ground_color,
-            height: 20.0,
-          ),
+  State<BorrowContainer> createState() => _BorrowContainerState();
+}
 
-          //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
-          ThreeButtons(),
-          //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
-          Container(
-            ///////divider//////////////////////////////
-            color: context.watch<LendVarState>().back_ground_color,
-            height: 20.0,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
+class _BorrowContainerState extends State<BorrowContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return Scrollbar(
+        child: CustomScrollView(
+      shrinkWrap: true,
+      slivers: <Widget>[
+        SliverPadding(
+          padding: const EdgeInsets.all(8.0),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate(
+              <Widget>[
+                OverviewAndText(),
+                Container(
+                  ///////divider//////////////////////////////
+                  color: context.watch<LendVarState>().back_ground_color,
+                  height: 20.0,
+                ),
+                //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
+                ThreeButtons(),
+                //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
+                Container(
+                  ///////divider//////////////////////////////
+                  color: context.watch<LendVarState>().back_ground_color,
+                  height: 20.0,
+                ),
                 OneDebt(),
                 OneDebt(),
                 OneDebt(),
@@ -53,8 +57,8 @@ class BorrowContainer extends StatelessWidget {
               ],
             ),
           ),
-        ],
-      ),
-    );
+        ),
+      ],
+    ));
   }
 }

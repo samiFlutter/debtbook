@@ -1,6 +1,6 @@
 import 'package:debtbook/providers/LendBorrowVar.dart';
 import 'package:debtbook/providers/provider_test.dart';
-import 'package:debtbook/screens/debt.dart';
+import 'package:debtbook/customWidget/one_debt.dart';
 import 'package:debtbook/screens/mainPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
