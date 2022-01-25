@@ -43,74 +43,64 @@ class _MainPageState extends State<MainPage> {
         ),
 
         ///////////////////////////////////////////////////body////////////////////////////////////////////////
-        body: Container(
-          color: context.watch<LendVarState>().back_ground_color,
-          child: Column(
-            children: [
-              /////////////////////////////////////////len and borrow buttons //////////////////////////
-              Container(
-                padding: EdgeInsets.all(5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      decoration: BoxDecoration(
-                        color: context.watch<LendVarState>().color_var,
-                        borderRadius: BorderRadius.circular(5.0),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: TextButton(
-                          child: Text(
-                            'lend',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 20.0,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          onPressed: () {
-                            context.read<LendVarState>().trueLendVar();
-                          }),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      decoration: BoxDecoration(
-                        color: context.watch<LendVarState>().color_var,
-                        borderRadius: BorderRadius.circular(5.0),
-                        shape: BoxShape.rectangle,
-                      ),
-                      child: TextButton(
-                        onPressed: () {
-                          context.read<LendVarState>().falseLendVar();
-                        },
-                        child: Text(
-                          'borrow',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 20.0,
-                          ),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  decoration: BoxDecoration(
+                    color: context.watch<LendVarState>().color_var,
+                    borderRadius: BorderRadius.circular(5.0),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: TextButton(
+                      child: Text(
+                        'lend',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0,
                         ),
+                        textAlign: TextAlign.center,
+                      ),
+                      onPressed: () {
+                        context.read<LendVarState>().trueLendVar();
+                      }),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  decoration: BoxDecoration(
+                    color: context.watch<LendVarState>().color_var,
+                    borderRadius: BorderRadius.circular(5.0),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      context.read<LendVarState>().falseLendVar();
+                    },
+                    child: Text(
+                      'borrow',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20.0,
                       ),
                     ),
-                  ],
+                  ),
                 ),
-              ),
-              /////////////////////////////////end tow button lend and borrrow ///////////////////////////
-
-              Container(
-                child: (context.watch<LendVarState>().lend_var == true)
-                    ? LendContainer()
-                    : BorrowContainer(),
-              ),
-              Container(
-                color: context.watch<LendVarState>().back_ground_color,
-                height: 20.0,
-              ),
-            ],
-          ),
+              ],
+            ),
+            Container(
+              child: (context.watch<LendVarState>().lend_var == true)
+                  ? LendContainer()
+                  : BorrowContainer(),
+            )
+          ],
         ),
 
         ///////////////////////////////////////////////bottomsheet//////////////////////////////////////////////////////
