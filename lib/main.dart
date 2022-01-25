@@ -1,7 +1,10 @@
 import 'package:debtbook/providers/LendBorrowVar.dart';
 import 'package:debtbook/providers/provider_test.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:debtbook/customWidget/one_debt.dart';
+=======
+>>>>>>> parent of 6ace4db (before adding scrolbar)
 =======
 >>>>>>> parent of 6ace4db (before adding scrolbar)
 import 'package:debtbook/screens/mainPage.dart';

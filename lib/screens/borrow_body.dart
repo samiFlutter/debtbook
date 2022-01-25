@@ -5,6 +5,7 @@ class BorrowContainer extends StatefulWidget {
 
   @override
 <<<<<<< HEAD
+<<<<<<< HEAD
   State<BorrowContainer> createState() => _BorrowContainerState();
 }
 
@@ -108,6 +109,61 @@ class _BorrowContainerState extends State<BorrowContainer> {
                 ),
               ],
             ),
+=======
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          color: Colors.orange,
+        ),
+        Column(
+          children: [
+            TextButton(
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Overview'),
+                    Icon(
+                      Icons.arrow_forward,
+                      color: Colors.black,
+                    )
+                  ],
+                )),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: const Divider(
+                color: Colors.black,
+                thickness: 2,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('total lend amount '),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('0.00\$'),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('collected '),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('0.00\$'),
+                ),
+              ],
+            ),
+>>>>>>> parent of 6ace4db (before adding scrolbar)
             SizedBox(
               width: MediaQuery.of(context).size.width,
             ),
