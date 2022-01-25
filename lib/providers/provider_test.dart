@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:debtbook/providers/LendBorrowVar.dart';
 import 'package:provider/provider.dart';
 
+////this class is only to test the provider
 class testProvider extends StatelessWidget {
   const testProvider({Key? key}) : super(key: key);
 

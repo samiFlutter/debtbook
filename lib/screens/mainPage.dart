@@ -1,8 +1,12 @@
 import 'dart:ffi';
+import 'package:debtbook/providers/LendBorrowVar.dart';
 import 'package:debtbook/screens/borrow_body.dart';
 import 'package:debtbook/screens/bottomsheet_lendpage.dart';
 import 'package:debtbook/screens/lend_body.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'bottomsheet_borrowpage.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -16,64 +20,92 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepOrange,
-        leading: IconButton(
-          tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
-        ),
-        title: Text(
-          '',
-        ),
-        actions: [
-          IconButton(
-            tooltip: '',
-            icon: const Icon(
-              Icons.search,
-            ),
+        ///////////////////////////////////////////appbar/////////////////////////////////////////////////////
+        appBar: AppBar(
+          backgroundColor: context.watch<LendVarState>().color_var,
+          leading: IconButton(
+            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            icon: const Icon(Icons.menu),
             onPressed: () {},
           ),
-        ],
-      ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              TextButton(
-                  //color: Colors.deepOrange,
-                  /* padding: EdgeInsets.fromLTRB(
-                      0, 0, MediaQuery.of(context).size.height * 0.2, 0),*/
-                  child: Text(
-                    'lend',
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {
-                    lendvar = true;
-                    setState(() {});
-                  }),
-              RaisedButton(
-                  color: Colors.deepOrange,
-                  padding: EdgeInsets.fromLTRB(
-                      0, 0, MediaQuery.of(context).size.height * 0.2, 0),
-                  child: Text(
-                    'borrow',
-                  ),
-                  onPressed: () {
-                    lendvar = false;
-                    setState(() {});
-                  }),
-            ],
+          title: Text(
+            '',
           ),
-          Container(
-            child: (lendvar == true) ? LendContainer() : BorrowContainer(),
-          )
-        ],
-      ),
-      bottomSheet: const Bottomsheetlandpage(
-        key: null,
-      ),
-    );
+          actions: [
+            IconButton(
+              tooltip: '',
+              icon: const Icon(
+                Icons.search,
+              ),
+              onPressed: () {},
+            ),
+          ],
+        ),
+
+        ///////////////////////////////////////////////////body////////////////////////////////////////////////
+        body: Column(
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  decoration: BoxDecoration(
+                    color: context.watch<LendVarState>().color_var,
+                    borderRadius: BorderRadius.circular(5.0),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: TextButton(
+                      child: Text(
+                        'lend',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      onPressed: () {
+                        context.read<LendVarState>().trueLendVar();
+                      }),
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  decoration: BoxDecoration(
+                    color: context.watch<LendVarState>().color_var,
+                    borderRadius: BorderRadius.circular(5.0),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      context.read<LendVarState>().falseLendVar();
+                    },
+                    child: Text(
+                      'borrow',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              child: (context.watch<LendVarState>().lend_var == true)
+                  ? LendContainer()
+                  : BorrowContainer(),
+            )
+          ],
+        ),
+
+        ///////////////////////////////////////////////bottomsheet//////////////////////////////////////////////////////
+        bottomSheet: (context.watch<LendVarState>().lend_var == true)
+            ? Bottomsheetlandpage()
+            : BottomsheetBorrowpage());
   }
 }
