@@ -2,8 +2,8 @@ import 'package:debtbook/providers/LendBorrowVar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Bottomsheetlandpage extends StatelessWidget {
-  const Bottomsheetlandpage({Key? key}) : super(key: key);
+class BottomsheetBorrowpage extends StatelessWidget {
+  const BottomsheetBorrowpage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class Bottomsheetlandpage extends StatelessWidget {
           FloatingActionButton(
             backgroundColor: context.watch<LendVarState>().color_var,
             onPressed: () {
-              print('add len ');
+              print('add borrow ');
             },
             tooltip: '',
             child: const Icon(Icons.add),

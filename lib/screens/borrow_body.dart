@@ -1,4 +1,11 @@
+import 'package:debtbook/customWidget/overview_and_text.dart';
+import 'package:debtbook/customWidget/three_buttons.dart';
+import 'package:debtbook/providers/LendBorrowVar.dart';
+import 'package:debtbook/customWidget/one_debt.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/src/provider.dart';
+import 'package:debtbook/customWidget/three_buttons.dart';
+import 'package:debtbook/customWidget/overview_and_text.dart';
 
 class BorrowContainer extends StatefulWidget {
   const BorrowContainer({Key? key}) : super(key: key);
@@ -6,6 +13,9 @@ class BorrowContainer extends StatefulWidget {
   @override
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 43fe20d (end)
   State<BorrowContainer> createState() => _BorrowContainerState();
 }
 
@@ -55,6 +65,7 @@ class _BorrowContainerState extends State<BorrowContainer> {
         ),
       ],
     ));
+<<<<<<< HEAD
 =======
   Widget build(BuildContext context) {
     return Stack(
@@ -266,5 +277,7 @@ class _BorrowContainerState extends State<BorrowContainer> {
       ],
     );
 >>>>>>> parent of 6ace4db (before adding scrolbar)
+=======
+>>>>>>> parent of 43fe20d (end)
   }
 }
