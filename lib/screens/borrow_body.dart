@@ -18,8 +18,7 @@ class BorrowContainer extends StatefulWidget {
 class _BorrowContainerState extends State<BorrowContainer> {
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-        child: CustomScrollView(
+    return CustomScrollView(
       shrinkWrap: true,
       slivers: <Widget>[
         SliverPadding(
@@ -60,6 +59,6 @@ class _BorrowContainerState extends State<BorrowContainer> {
           ),
         ),
       ],
-    ));
+    );
   }
 }
