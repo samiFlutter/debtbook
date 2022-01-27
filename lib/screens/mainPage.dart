@@ -1,4 +1,6 @@
 import 'dart:ffi';
+import 'package:debtbook/customWidget/borrow_view.dart';
+import 'package:debtbook/customWidget/lend_view.dart';
 import 'package:debtbook/providers/LendBorrowVar.dart';
 import 'package:debtbook/screens/borrow_body.dart';
 import 'package:debtbook/screens/bottomsheet_lendpage.dart';
@@ -19,103 +21,71 @@ class _MainPageState extends State<MainPage> {
   bool lendvar = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        ///////////////////////////////////////////appbar/////////////////////////////////////////////////////
-        appBar: AppBar(
-          backgroundColor: context.watch<LendVarState>().color_var,
-          leading: IconButton(
-            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-          title: Text(
-            '',
-          ),
-          actions: [
-            IconButton(
-              tooltip: '',
-              icon: const Icon(
-                Icons.search,
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+            ///////////////////////////////////////////appbar/////////////////////////////////////////////////////
+            appBar: AppBar(
+              backgroundColor: context.watch<LendVarState>().color_var,
+              leading: IconButton(
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+                icon: const Icon(Icons.menu),
+                onPressed: () {},
               ),
-              onPressed: () {},
-            ),
-          ],
-        ),
-
-        ///////////////////////////////////////////////////body////////////////////////////////////////////////
-        body: Container(
-          color: context.watch<LendVarState>().back_ground_color,
-          child: Column(
-            children: [
-              /////////////////////////////////////////len and borrow buttons //////////////////////////
-              Container(
-                padding: EdgeInsets.all(5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      decoration: BoxDecoration(
-                        color: context.watch<LendVarState>().color_var,
-                        borderRadius: BorderRadius.circular(5.0),
-                        shape: BoxShape.rectangle,
+              title: Text(
+                '',
+              ),
+              /////////////////////////////////////////////////////////////////////////////////
+              bottom: const TabBar(
+                tabs: [
+                  Tab(
+                    child: Text(
+                      'Lend',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20.0,
                       ),
-                      child: TextButton(
-                          child: Text(
-                            'lend',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 20.0,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          onPressed: () {
-                            context.read<LendVarState>().trueLendVar();
-                          }),
+                      textAlign: TextAlign.center,
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.4,
-                      decoration: BoxDecoration(
-                        color: context.watch<LendVarState>().color_var,
-                        borderRadius: BorderRadius.circular(5.0),
-                        shape: BoxShape.rectangle,
+                  ),
+                  Tab(
+                    child: Text(
+                      'Borrow',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20.0,
                       ),
-                      child: TextButton(
-                        onPressed: () {
-                          context.read<LendVarState>().falseLendVar();
-                        },
-                        child: Text(
-                          'borrow',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 20.0,
-                          ),
-                        ),
-                      ),
+                      textAlign: TextAlign.center,
                     ),
-                  ],
+                  ),
+                ],
+              ),
+              /////////////////////////////////////////////////////////////////////////////////
+              actions: [
+                IconButton(
+                  tooltip: '',
+                  icon: const Icon(
+                    Icons.search,
+                  ),
+                  onPressed: () {},
                 ),
-              ),
-              /////////////////////////////////end tow button lend and borrrow ///////////////////////////
+              ],
+            ),
 
-              Container(
-                child: (context.watch<LendVarState>().lend_var == true)
-                    ? LendContainer()
-                    : BorrowContainer(),
-              ),
-              Container(
-                color: context.watch<LendVarState>().back_ground_color,
-                height: 20.0,
-              ),
-            ],
-          ),
-        ),
-
-        ///////////////////////////////////////////////bottomsheet//////////////////////////////////////////////////////
-        bottomSheet: (context.watch<LendVarState>().lend_var == true)
-            ? Bottomsheetlandpage()
-            : BottomsheetBorrowpage());
+            ///////////////////////////////////////////////////body////////////////////////////////////////////////
+            body: const TabBarView(
+              children: [
+                LendView(),
+                BorrowView(),
+              ],
+            ), ///////////////////////////////////////////////bottomsheet//////////////////////////////////////////////////////
+            bottomSheet: (context.watch<LendVarState>().lend_var == true)
+                ? Bottomsheetlandpage()
+                : BottomsheetBorrowpage()),
+      ),
+    );
   }
 }

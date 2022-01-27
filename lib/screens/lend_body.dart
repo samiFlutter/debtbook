@@ -1,3 +1,4 @@
+import 'package:debtbook/customWidget/one_debt.dart';
 import 'package:debtbook/customWidget/overview_and_text.dart';
 import 'package:debtbook/customWidget/three_buttons.dart';
 import 'package:debtbook/providers/LendBorrowVar.dart';
@@ -22,6 +23,8 @@ class LendContainer extends StatelessWidget {
             height: 20.0,
           ),
           ThreeButtons(),
+          OneDebt(),
+          OneDebt(),
         ],
       ),
     );

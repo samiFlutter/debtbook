@@ -12,7 +12,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => LendVarState()),
       ],
-      child: const MainClass(),
+      child: MainClass(),
     ),
   );
 }

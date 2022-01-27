@@ -18,46 +18,24 @@ class BorrowContainer extends StatefulWidget {
 class _BorrowContainerState extends State<BorrowContainer> {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      shrinkWrap: true,
-      slivers: <Widget>[
-        SliverPadding(
-          padding: const EdgeInsets.all(8.0),
-          sliver: SliverList(
-            delegate: SliverChildListDelegate(
-              <Widget>[
-                OverviewAndText(),
-                Container(
-                  ///////divider//////////////////////////////
-                  color: context.watch<LendVarState>().back_ground_color,
-                  height: 20.0,
-                ),
-                //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
-                ThreeButtons(),
-                //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
-                Container(
-                  ///////divider//////////////////////////////
-                  color: context.watch<LendVarState>().back_ground_color,
-                  height: 20.0,
-                ),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-                OneDebt(),
-              ],
-            ),
-          ),
+    return Column(
+      children: [
+        OverviewAndText(),
+        Container(
+          ///////divider//////////////////////////////
+          color: context.watch<LendVarState>().back_ground_color,
+          height: 20.0,
         ),
+        //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
+        ThreeButtons(),
+        //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
+        Container(
+          ///////divider//////////////////////////////
+          color: context.watch<LendVarState>().back_ground_color,
+          height: 20.0,
+        ),
+        OneDebt(),
+        OneDebt(),
       ],
     );
   }
