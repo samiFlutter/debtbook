@@ -5,8 +5,8 @@ import 'package:debtbook/customWidget/one_debt.dart';
 import 'package:flutter/material.dart';
 // ignore: implementation_imports
 import 'package:provider/src/provider.dart';
-import 'package:debtbook/customWidget/three_buttons.dart';
-import 'package:debtbook/customWidget/overview_and_text.dart';
+
+import 'bottomsheet_borrowpage.dart';
 
 class BorrowContainer extends StatefulWidget {
   BorrowContainer({Key? key}) : super(key: key);

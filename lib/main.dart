@@ -1,5 +1,4 @@
 import 'package:debtbook/providers/LendBorrowVar.dart';
-import 'package:debtbook/providers/provider_test.dart';
 import 'package:debtbook/customWidget/one_debt.dart';
 import 'package:debtbook/customWidget/one_debt.dart';
 import 'package:debtbook/screens/mainPage.dart';
@@ -28,9 +27,9 @@ class _MainClassState extends State<MainClass> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MainPage(),
       // home: OneDebt(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }

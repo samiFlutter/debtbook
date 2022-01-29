@@ -13,7 +13,7 @@ class ThreeButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 0.3,
+            //width: MediaQuery.of(context).size.width * 0.3,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -32,12 +32,14 @@ class ThreeButtons extends StatelessWidget {
                   ),
                   tooltip: 'TimeLine',
                 ),
-                Text('TimeLine '),
+                Text(
+                  'TimeLine ',
+                ),
               ],
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.3,
+            // width: MediaQuery.of(context).size.width * 0.3,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -56,12 +58,14 @@ class ThreeButtons extends StatelessWidget {
                   ),
                   tooltip: 'Active',
                 ),
-                Text('Active '),
+                Text(
+                  'Active ',
+                ),
               ],
             ),
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.3,
+            //width: MediaQuery.of(context).size.width * 0.3,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -80,7 +84,9 @@ class ThreeButtons extends StatelessWidget {
                   ),
                   tooltip: 'Default ',
                 ),
-                Text('Default '),
+                Text(
+                  'Default ',
+                ),
               ],
             ),
           ),
