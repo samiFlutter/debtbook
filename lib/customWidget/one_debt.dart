@@ -1,16 +1,23 @@
-import 'package:debtbook/providers/LendBorrowVar.dart';
+import 'package:debtbook/providers/ColorProvider.dart';
+import 'package:debtbook/providers/dimensionProvider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:material/material.dart';
 import 'package:provider/src/provider.dart';
 
 class OneDebt extends StatelessWidget {
-  OneDebt({Key? key}) : super(key: key);
+  OneDebt({
+    Key? key,
+    required Color color,
+  }) : super(key: key) {
+    this.sideColor = color;
+    // TODO: implement
+  }
   String firstName = 'firstname', familyName = 'familyname';
   int amount = 0;
   var sinceDate = DateTime.now();
   var dueDate = DateTime.now();
-
+  Color? sideColor = Colors.amberAccent;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +25,13 @@ class OneDebt extends StatelessWidget {
         Container(
           color: Colors.white,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Container(
+                width: 5,
+                height: 40,
+                color: sideColor,
+              ),
               CircleAvatar(
                 radius: 16.0,
                 child: ClipRRect(
@@ -31,8 +44,8 @@ class OneDebt extends StatelessWidget {
         ),
         Container(
           ///////divider//////////////////////////////
-          color: context.watch<LendVarState>().back_ground_color,
-          height: 20.0,
+          color: context.watch<ColorProvider>().backGroundColor,
+          height: context.watch<DimensionProvider>().separateurHeight,
         ),
       ],
     );

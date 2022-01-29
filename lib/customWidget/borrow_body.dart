@@ -1,7 +1,8 @@
 import 'package:debtbook/customWidget/overview_and_text.dart';
 import 'package:debtbook/customWidget/three_buttons.dart';
-import 'package:debtbook/providers/LendBorrowVar.dart';
+import 'package:debtbook/providers/ColorProvider.dart';
 import 'package:debtbook/customWidget/one_debt.dart';
+import 'package:debtbook/providers/dimensionProvider.dart';
 import 'package:flutter/material.dart';
 // ignore: implementation_imports
 import 'package:provider/src/provider.dart';
@@ -23,19 +24,23 @@ class _BorrowContainerState extends State<BorrowContainer> {
         OverviewAndText(),
         Container(
           ///////divider//////////////////////////////
-          color: context.watch<LendVarState>().back_ground_color,
-          height: 20.0,
+          color: context.watch<ColorProvider>().backGroundColor,
+          height: context.watch<DimensionProvider>().separateurHeight,
         ),
         //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
         ThreeButtons(),
         //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
         Container(
           ///////divider//////////////////////////////
-          color: context.watch<LendVarState>().back_ground_color,
-          height: 20.0,
+          color: context.watch<ColorProvider>().backGroundColor,
+          height: context.watch<DimensionProvider>().separateurHeight,
         ),
-        OneDebt(),
-        OneDebt(),
+        OneDebt(
+          color: context.watch<ColorProvider>().borrowAppBarColor,
+        ),
+        OneDebt(
+          color: context.watch<ColorProvider>().borrowAppBarColor,
+        ),
       ],
     );
   }

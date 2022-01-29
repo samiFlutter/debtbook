@@ -1,6 +1,6 @@
-import 'package:debtbook/customWidget/borrow_view.dart';
-import 'package:debtbook/customWidget/lend_view.dart';
-import 'package:debtbook/providers/LendBorrowVar.dart';
+import 'package:debtbook/screens/borrow_view.dart';
+import 'package:debtbook/screens/lend_view.dart';
+import 'package:debtbook/providers/ColorProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -58,7 +58,7 @@ class _MainPageState extends State<MainPage>
             tabs: [
               Tab(
                 child: Text(
-                  'Lend',
+                  'LEND',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -69,7 +69,7 @@ class _MainPageState extends State<MainPage>
               ),
               Tab(
                 child: Text(
-                  'Borrow',
+                  'BORROW',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,

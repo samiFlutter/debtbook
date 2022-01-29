@@ -1,7 +1,7 @@
-import 'package:debtbook/providers/LendBorrowVar.dart';
-import 'package:debtbook/screens/borrow_body.dart';
-import 'package:debtbook/screens/bottomsheet_lendpage.dart';
-import 'package:debtbook/screens/lend_body.dart';
+import 'package:debtbook/providers/ColorProvider.dart';
+import 'package:debtbook/customWidget/borrow_body.dart';
+import 'package:debtbook/customWidget/bottomsheet_lendpage.dart';
+import 'package:debtbook/customWidget/lend_body.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
@@ -19,14 +19,14 @@ class _LendViewState extends State<LendView> {
       body: ListView(
         children: [
           Container(
-            color: context.watch<LendVarState>().back_ground_color1,
+            color: context.watch<ColorProvider>().backGroundColor,
             child: Column(
               children: [
                 Container(
                   child: LendContainer(),
                 ),
                 Container(
-                  color: context.watch<LendVarState>().back_ground_color1,
+                  color: context.watch<ColorProvider>().backGroundColor,
                   height: MediaQuery.of(context).size.height * 0.4,
                 ),
               ],

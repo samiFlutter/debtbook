@@ -13,6 +13,7 @@ class ThreeButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
+            height: 40,
             //width: MediaQuery.of(context).size.width * 0.3,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -39,6 +40,7 @@ class ThreeButtons extends StatelessWidget {
             ),
           ),
           Container(
+            height: 40,
             // width: MediaQuery.of(context).size.width * 0.3,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -65,6 +67,7 @@ class ThreeButtons extends StatelessWidget {
             ),
           ),
           Container(
+            height: 40,
             //width: MediaQuery.of(context).size.width * 0.3,
             decoration: BoxDecoration(
               color: Colors.white,
