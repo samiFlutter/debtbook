@@ -6,94 +6,95 @@ class ThreeButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8.0),
-      color: Colors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-            height: 40,
-            //width: MediaQuery.of(context).size.width * 0.3,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Colors.grey,
-                width: 2,
+    return Card(
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.06,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height * 0.05,
+              //width: MediaQuery.of(context).size.width * 0.3,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 2,
+                ),
+                borderRadius: BorderRadius.circular(5.0),
+                shape: BoxShape.rectangle,
               ),
-              borderRadius: BorderRadius.circular(5.0),
-              shape: BoxShape.rectangle,
-            ),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.remove_red_eye,
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.remove_red_eye,
+                    ),
+                    tooltip: 'TimeLine',
                   ),
-                  tooltip: 'TimeLine',
-                ),
-                Text(
-                  'TimeLine ',
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: 40,
-            // width: MediaQuery.of(context).size.width * 0.3,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Colors.grey,
-                width: 2,
+                  Text(
+                    'TimeLine ',
+                  ),
+                ],
               ),
-              borderRadius: BorderRadius.circular(5.0),
-              shape: BoxShape.rectangle,
             ),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.align_horizontal_center,
-                  ),
-                  tooltip: 'Active',
+            Container(
+              height: MediaQuery.of(context).size.height * 0.05,
+              // width: MediaQuery.of(context).size.width * 0.3,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 2,
                 ),
-                Text(
-                  'Active ',
-                ),
-              ],
-            ),
-          ),
-          Container(
-            height: 40,
-            //width: MediaQuery.of(context).size.width * 0.3,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Colors.grey,
-                width: 2,
+                borderRadius: BorderRadius.circular(5.0),
+                shape: BoxShape.rectangle,
               ),
-              borderRadius: BorderRadius.circular(5.0),
-              shape: BoxShape.rectangle,
-            ),
-            child: Row(
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.double_arrow,
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.align_horizontal_center,
+                    ),
+                    tooltip: 'Active',
                   ),
-                  tooltip: 'Default ',
-                ),
-                Text(
-                  'Default ',
-                ),
-              ],
+                  Text(
+                    'Active ',
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+            Container(
+              height: MediaQuery.of(context).size.height * 0.05,
+              //width: MediaQuery.of(context).size.width * 0.3,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 2,
+                ),
+                borderRadius: BorderRadius.circular(5.0),
+                shape: BoxShape.rectangle,
+              ),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.double_arrow,
+                    ),
+                    tooltip: 'Default ',
+                  ),
+                  Text(
+                    'Default ',
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

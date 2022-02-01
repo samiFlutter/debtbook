@@ -22,19 +22,11 @@ class _BorrowContainerState extends State<BorrowContainer> {
     return Column(
       children: [
         OverviewAndText(),
-        Container(
-          ///////divider//////////////////////////////
-          color: context.watch<ColorProvider>().backGroundColor,
-          height: context.watch<DimensionProvider>().separateurHeight,
-        ),
+
         //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
         ThreeButtons(),
         //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
-        Container(
-          ///////divider//////////////////////////////
-          color: context.watch<ColorProvider>().backGroundColor,
-          height: context.watch<DimensionProvider>().separateurHeight,
-        ),
+
         OneDebt(
           color: context.watch<ColorProvider>().borrowAppBarColor,
         ),

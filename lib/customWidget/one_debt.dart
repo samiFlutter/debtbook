@@ -22,14 +22,13 @@ class OneDebt extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          color: Colors.white,
+        Card(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 width: 5,
-                height: 40,
+                height: MediaQuery.of(context).size.height * 0.05,
                 color: sideColor,
               ),
               CircleAvatar(
@@ -42,11 +41,11 @@ class OneDebt extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          ///////divider//////////////////////////////
-          color: context.watch<ColorProvider>().backGroundColor,
-          height: context.watch<DimensionProvider>().separateurHeight,
-        ),
+        // Container(
+        //   ///////divider//////////////////////////////
+        //   color: context.watch<ColorProvider>().backGroundColor,
+        //   height: context.watch<DimensionProvider>().separateurHeight,
+        // ),
       ],
     );
   }

@@ -22,9 +22,7 @@ class _BorrowViewState extends State<BorrowView> {
             color: context.watch<ColorProvider>().backGroundColor,
             child: Column(
               children: [
-                Container(
-                  child: BorrowContainer(),
-                ),
+                BorrowContainer(),
                 Container(
                   color: context.watch<ColorProvider>().backGroundColor,
                   height: MediaQuery.of(context).size.height * 0.4,

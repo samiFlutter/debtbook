@@ -14,17 +14,7 @@ class LendContainer extends StatelessWidget {
     return Column(
       children: [
         OverviewAndText(),
-        Container(
-          ///////divider//////////////////////////////
-          color: context.watch<ColorProvider>().backGroundColor,
-          height: context.watch<DimensionProvider>().separateurHeight,
-        ),
         ThreeButtons(),
-        Container(
-          ///////divider//////////////////////////////
-          color: context.watch<ColorProvider>().backGroundColor,
-          height: context.watch<DimensionProvider>().separateurHeight,
-        ),
         OneDebt(
           color: context.watch<ColorProvider>().lendAppBarColor,
         ),
