@@ -1,5 +1,6 @@
 import 'package:debtbook/providers/ColorProvider.dart';
 import 'package:debtbook/screens/add_transaction.dart';
+import 'package:debtbook/screens/test.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +18,7 @@ class BottomsheetBorrowpage extends StatelessWidget {
           FloatingActionButton(
             backgroundColor: context.watch<ColorProvider>().borrowAppBarColor,
             onPressed: () {
+              context.read<ColorProvider>().lendVarFalse();
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AddTransaction()),

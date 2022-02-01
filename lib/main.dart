@@ -2,6 +2,7 @@ import 'package:debtbook/providers/ColorProvider.dart';
 import 'package:debtbook/customWidget/one_debt.dart';
 import 'package:debtbook/customWidget/one_debt.dart';
 import 'package:debtbook/providers/dimensionProvider.dart';
+import 'package:debtbook/screens/add_transaction.dart';
 import 'package:debtbook/screens/mainPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

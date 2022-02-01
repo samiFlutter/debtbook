@@ -1,4 +1,5 @@
 import 'package:debtbook/providers/ColorProvider.dart';
+import 'package:debtbook/screens/add_transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +17,11 @@ class Bottomsheetlandpage extends StatelessWidget {
           FloatingActionButton(
             backgroundColor: context.watch<ColorProvider>().lendAppBarColor,
             onPressed: () {
-              print('add len ');
+              context.read<ColorProvider>().lenVarTrue();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddTransaction()),
+              );
             },
             tooltip: '',
             child: const Icon(Icons.add),
