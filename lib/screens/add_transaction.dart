@@ -1,5 +1,7 @@
+import 'package:debtbook/customWidget/bottomsheet_addtransaction.dart';
 import 'package:debtbook/providers/ColorProvider.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -26,6 +28,7 @@ class _AddTransactionState extends State<AddTransaction> {
   @override
   void initState() {
     super.initState();
+
     _description_controller = TextEditingController();
     _loan_amount_controller = TextEditingController();
     _full_name_controller = TextEditingController();
@@ -322,7 +325,7 @@ class _AddTransactionState extends State<AddTransaction> {
           ),
         ],
       ),
-      //bottomSheet: ,
+      bottomSheet: BottomsheetAddTrans(),
     );
   }
 

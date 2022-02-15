@@ -26,13 +26,6 @@ class _BorrowContainerState extends State<BorrowContainer> {
         //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
         ThreeButtons(),
         //////////////////////////////////////////////container three buttons timeline active default  ////////////////////////////
-
-        OneDebt(
-          color: context.watch<ColorProvider>().borrowAppBarColor,
-        ),
-        OneDebt(
-          color: context.watch<ColorProvider>().borrowAppBarColor,
-        ),
       ],
     );
   }

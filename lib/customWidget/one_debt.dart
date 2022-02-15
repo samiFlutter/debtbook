@@ -6,11 +6,19 @@ import 'package:material/material.dart';
 import 'package:provider/src/provider.dart';
 
 class OneDebt extends StatelessWidget {
+  var name;
+
+  var date;
+
   OneDebt({
     Key? key,
     required Color color,
+    required String name,
+    required DateTime Mdate,
   }) : super(key: key) {
     this.sideColor = color;
+    this.name = name;
+    this.date = date;
     // TODO: implement
   }
   String firstName = 'firstname', familyName = 'familyname';
@@ -24,7 +32,7 @@ class OneDebt extends StatelessWidget {
       children: [
         Card(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 width: 5,
@@ -38,6 +46,11 @@ class OneDebt extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50.0),
                 ),
               ),
+              Expanded(child: Container()),
+              Column(children: [
+                Text('$name'),
+                Text('$date'),
+              ]),
             ],
           ),
         ),
